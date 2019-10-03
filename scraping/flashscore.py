@@ -104,9 +104,12 @@ def main():
                 'Pts': Pts,
             }
             write_standings(data)
+ //       df1 = pd.read_csv ('out/result.csv')   
+ //       df2 = pd.read_csv ('out/fixtures.csv')   
+ //       df3 = pd.read_csv ('out/standings.csv')   
         df1 = pd.read_csv ('output/result.csv')   
         df2 = pd.read_csv ('output/fixtures.csv')   
-        df3 = pd.read_csv ('output/standings.csv')   
+        df3 = pd.read_csv ('output/standings.csv') 
         writer = pd.ExcelWriter('output/' + soup.find('div', class_='teamHeader__name').text.strip() +'.xlsx', engine='xlsxwriter')
         df1.to_excel(writer, sheet_name='Results', index=False)
         df2.to_excel(writer, sheet_name='Fixtures', index=False)
